@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/AnjaliKevadiya/ReadmeGenerator/issues"
   },
-  "homepage": "https://github.com/AnjaliKevadiya/ReadmeGenerator#readme"
+  "homepage": "https://github.com/AnjaliKevadiya/ReadmeGenerator#readme",
+  "dependencies": {
+    "inquirer": "^7.3.3"
+  }
 }
