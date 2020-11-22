@@ -37,11 +37,17 @@ const askQuestions = () =>
             type: 'input',
             message: 'What command should be run to install dependencies?',
             name: 'install',
+            default: function() {
+                return 'npm i';
+            }
         }, 
         {
             type: 'input',
             message: 'What command should be run to run tests?',
             name: 'run',
+            default: function() {
+                return 'npm run test';
+            }
         }, 
         {
             type: 'input',
