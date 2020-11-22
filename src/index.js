@@ -36,17 +36,17 @@ const askQuestions = () =>
         {
             type: 'input',
             message: 'What command should be run to install dependencies?',
-            name: 'dependencies',
+            name: 'install',
         }, 
         {
             type: 'input',
             message: 'What command should be run to run tests?',
-            name: 'tests',
+            name: 'run',
         }, 
         {
             type: 'input',
             message: 'What does the user need to know about using the repo?',
-            name: 'about',
+            name: 'usage',
         }, 
         {
             type: 'input',
@@ -55,11 +55,62 @@ const askQuestions = () =>
         }
     ]);
 
+// arrow function to write README file
+const generateReadmeFile = (data) => `
+# ${data.projectName}
+
+## Description
+
+${data.description}
+
+## Table of Contents
+
+* [Installation](#installation)
+
+* [Usage](#usage)
+
+* [License](#license)
+
+* [Contributing](#contributing)
+
+* [Tests](#tests)
+
+* [Questions](#questions)
+
+## Installation
+
+To install necessary dependencies, run the following command:
+
+${data.install}
+
+## Usage
+
+${data.usage}
+
+## License
+
+This project is licensed under the ${data.license} license.
+
+## Contributing
+
+${data.contributing}
+
+## Tests
+
+To run tests, run the following command:
+
+${data.run}
+
+## Questions
+
+If you have any questions about the repo, open issue or contact me directly at [${data.email}](${data.email}). You can find more of my work at [${data.username}](https://github.com/${data.username}).
+`;
+
 // function to initialize program
 function init() {
     askQuestions()
-        .then((data) => writeFileAsyn("log.txt", JSON.stringify(data)))
-        .then(() => console.log('Sucessfully wrote to log.txt'))
+        .then((data) => writeFileAsyn("README.md", generateReadmeFile(data)))
+        .then(() => console.log('Sucessfully wrote to README.md'))
         .catch((err) => console.error());
 }
 
