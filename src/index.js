@@ -87,7 +87,9 @@ ${data.description}
 
 To install necessary dependencies, run the following command:
 
+\`\`\`
 ${data.install}
+\`\`\`
 
 ## Usage
 
@@ -105,7 +107,9 @@ ${data.contributing}
 
 To run tests, run the following command:
 
+\`\`\`
 ${data.run}
+\`\`\`
 
 ## Questions
 
